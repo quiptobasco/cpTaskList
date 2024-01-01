@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tasks</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: darkgray;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            ul {
+                list-style-type: none;
+            }
+
+            li {
+                font-size: 25px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <ul>
+                <li class="name1"></li>
+                <li class="name2"></li>
+            </ul>
+        </div>
+
+        <script>
+            let taskList = [
+                { Alexi: 'clean the bathroom', Dave: 'take out the garbage' },
+                {
+                    Ericka: 'clean the bathroom',
+                    Kathryn: 'take out the garbage',
+                },
+                { Shawnna: 'clean the bathroom', Tim: 'take out the garbage' },
+                { Alexi: 'take out the garbage', Dave: 'clean the bathroom' },
+                {
+                    Ericka: 'take out the garbage',
+                    Kathryn: 'clean the bathroom',
+                },
+                { Shawnna: 'take out the garbage', Tim: 'clean the bathroom' },
+                { Alexi: 'clean the bathroom', Dave: 'take out the garbage' },
+                {
+                    Ericka: 'clean the bathroom',
+                    Kathryn: 'take out the garbage',
+                },
+                { Shawnna: 'clean the bathroom', Tim: 'take out the garbage' },
+                { Alexi: 'take out the garbage', Dave: 'clean the bathroom' },
+                {
+                    Ericka: 'take out the garbage',
+                    Kathryn: 'clean the bathroom',
+                },
+                { Shawnna: 'take out the garbage', Tim: 'clean the bathroom' },
+                { Alexi: 'clean the bathroom', Dave: 'take out the garbage' },
+                {
+                    Ericka: 'clean the bathroom',
+                    Kathryn: 'take out the garbage',
+                },
+                { Shawnna: 'clean the bathroom', Tim: 'take out the garbage' },
+                { Alexi: 'take out the garbage', Dave: 'clean the bathroom' },
+                {
+                    Ericka: 'take out the garbage',
+                    Kathryn: 'clean the bathroom',
+                },
+                { Shawnna: 'take out the garbage', Tim: 'clean the bathroom' },
+                { Alexi: 'clean the bathroom', Dave: 'take out the garbage' },
+                {
+                    Ericka: 'clean the bathroom',
+                    Kathryn: 'take out the garbage',
+                },
+                { Shawnna: 'clean the bathroom', Tim: 'take out the garbage' },
+                { Alexi: 'take out the garbage', Dave: 'clean the bathroom' },
+                {
+                    Ericka: 'take out the garbage',
+                    Kathryn: 'clean the bathroom',
+                },
+                { Shawnna: 'take out the garbage', Tim: 'clean the bathroom' },
+                { Alexi: 'clean the bathroom', Dave: 'take out the garbage' },
+                {
+                    Ericka: 'clean the bathroom',
+                    Kathryn: 'take out the garbage',
+                },
+                { Shawnna: 'clean the bathroom', Tim: 'take out the garbage' },
+                { Alexi: 'take out the garbage', Dave: 'clean the bathroom' },
+                {
+                    Ericka: 'take out the garbage',
+                    Kathryn: 'clean the bathroom',
+                },
+                { Shawnna: 'take out the garbage', Tim: 'clean the bathroom' },
+                { Alexi: 'clean the bathroom', Dave: 'take out the garbage' },
+                {
+                    Ericka: 'clean the bathroom',
+                    Kathryn: 'take out the garbage',
+                },
+                { Shawnna: 'clean the bathroom', Tim: 'take out the garbage' },
+                { Alexi: 'take out the garbage', Dave: 'clean the bathroom' },
+                {
+                    Ericka: 'take out the garbage',
+                    Kathryn: 'clean the bathroom',
+                },
+                { Shawnna: 'take out the garbage', Tim: 'clean the bathroom' },
+                { Alexi: 'clean the bathroom', Dave: 'take out the garbage' },
+                {
+                    Ericka: 'clean the bathroom',
+                    Kathryn: 'take out the garbage',
+                },
+                { Shawnna: 'clean the bathroom', Tim: 'take out the garbage' },
+                { Alexi: 'take out the garbage', Dave: 'clean the bathroom' },
+                {
+                    Ericka: 'take out the garbage',
+                    Kathryn: 'clean the bathroom',
+                },
+                { Shawnna: 'take out the garbage', Tim: 'clean the bathroom' },
+                { Alexi: 'clean the bathroom', Dave: 'take out the garbage' },
+                {
+                    Ericka: 'clean the bathroom',
+                    Kathryn: 'take out the garbage',
+                },
+                { Shawnna: 'clean the bathroom', Tim: 'take out the garbage' },
+                { Alexi: 'take out the garbage', Dave: 'clean the bathroom' },
+                {
+                    Ericka: 'take out the garbage',
+                    Kathryn: 'clean the bathroom',
+                },
+                { Shawnna: 'take out the garbage', Tim: 'clean the bathroom' },
+                { Alexi: 'clean the bathroom', Dave: 'take out the garbage' },
+                {
+                    Ericka: 'clean the bathroom',
+                    Kathryn: 'take out the garbage',
+                },
+                { Shawnna: 'clean the bathroom', Tim: 'take out the garbage' },
+                { Alexi: 'take out the garbage', Dave: 'clean the bathroom' },
+                {
+                    Ericka: 'take out the garbage',
+                    Kathryn: 'clean the bathroom',
+                },
+                { Shawnna: 'take out the garbage', Tim: 'clean the bathroom' },
+            ];
+
+            function getCurrentWeekNumber() {
+                let currentDate = new Date();
+
+                let referenceDate = new Date(currentDate.getFullYear(), 0, 1);
+
+                let timeDifference = currentDate - referenceDate;
+
+                let weekNumber = Math.ceil(
+                    timeDifference / (7 * 24 * 60 * 60 * 1000)
+                );
+
+                return weekNumber;
+            }
+
+            let weekNumber = getCurrentWeekNumber();
+
+            let name1 = Object.keys(taskList[weekNumber - 1])[0];
+            let task1 = Object.values(taskList[weekNumber - 1])[0];
+            let name2 = Object.keys(taskList[weekNumber - 1])[1];
+            let task2 = Object.values(taskList[weekNumber - 1])[1];
+
+            document.querySelector('.name1').innerHTML = `${name1}: ${
+                task1[0].toUpperCase() + task1.substring(1)
+            }`;
+            document.querySelector('.name2').innerHTML = `${name2}: ${
+                task2[0].toUpperCase() + task2.substring(1)
+            }`;
+        </script>
+    </body>
+</html>
