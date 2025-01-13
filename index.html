@@ -173,7 +173,7 @@
               return weekNumber;
             }
             
-            const today = new Date(); // January 13, 2025
+            let weekNumber = getWeekOfYear(new Date());
 
             let name1 = Object.keys(taskList[weekNumber - 1])[0];
             let task1 = Object.values(taskList[weekNumber - 1])[0];
