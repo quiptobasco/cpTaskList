@@ -149,21 +149,31 @@
                 { Shawnna: 'take out the garbage', Tim: 'clean the bathrooms' },
             ];
 
-            function getCurrentWeekNumber() {
-                let currentDate = new Date();
+            // function getCurrentWeekNumber() {
+            //     let currentDate = new Date();
 
-                let referenceDate = new Date(currentDate.getFullYear(), 0, 1);
+            //     let referenceDate = new Date(currentDate.getFullYear(), 0, 1);
 
-                let timeDifference = currentDate - referenceDate;
+            //     let timeDifference = currentDate - referenceDate;
 
-                let weekNumber = Math.ceil(
-                    timeDifference / (7 * 24 * 60 * 60 * 1000)
-                );
+            //     let weekNumber = Math.ceil(
+            //         timeDifference / (7 * 24 * 60 * 60 * 1000)
+            //     );
 
-                return weekNumber;
+            //     return weekNumber;
+            // }
+
+            // let weekNumber = getCurrentWeekNumber();
+
+            function getWeekOfYear(date) {
+              const currentDate = date || new Date();
+              const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
+              const days = Math.floor((currentDate - startOfYear) / (24 * 60 * 60 * 1000));
+              const weekNumber = Math.ceil((days + startOfYear.getDay() + 1) / 7);
+              return weekNumber;
             }
-
-            let weekNumber = getCurrentWeekNumber();
+            
+            const today = new Date(); // January 13, 2025
 
             let name1 = Object.keys(taskList[weekNumber - 1])[0];
             let task1 = Object.values(taskList[weekNumber - 1])[0];
